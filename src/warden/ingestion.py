@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 from pydantic import ValidationError
 
-from warden.models import SecurityEvent
+from models import SecurityEvent
 
 def load_events(filepath: str) -> list[SecurityEvent]:
     events = []

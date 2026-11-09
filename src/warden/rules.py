@@ -1,4 +1,4 @@
-from warden.models import SecurityEvent, RiskAssessement
+from models import SecurityEvent, RiskAssessement
 
 def get_severity(score: int) -> str:
     if score >= 75:
@@ -38,6 +38,7 @@ def analyze_event(event: SecurityEvent) -> RiskAssessement:
         rule_ids.append("NET-001")
         actions.append("Inspect network traffic and determine which ports were targeted.")
     
+    score = min(score, 100)
     severity = get_severity(score)
     if not reasons:
         reasons.append("No suspicious behavior matched the configured detection rules.")

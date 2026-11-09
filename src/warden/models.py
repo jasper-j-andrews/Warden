@@ -27,7 +27,7 @@ class SecurityEvent(BaseModel):
 class RiskAssessement(BaseModel):
     event_id: str
     risk_score: int = Field(ge=0, le=100)
-    severity: Literal["low", "medium", "high", "critical"]
+    severity: Literal["Low", "Medium", "High", "Critical"]
     reasons: list[str]
     rule_ids: list[str]
     recommended_actions: list[str]

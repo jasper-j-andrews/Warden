@@ -1,6 +1,6 @@
 import argparse
-from warden.ingestion import load_events
-from warden.rules import analyze_event
+from ingestion import load_events
+from rules import analyze_event
 
 def main():
     parser = argparse.ArgumentParser(description="WardenAI security event analyzer")
